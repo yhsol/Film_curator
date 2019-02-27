@@ -17,10 +17,13 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test"
+		"test": "react-scripts test",
+		"deploy": "gh-pages -d build",
+		"predeploy": "yarn run build"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
 	},
+	"homepage": "https://yhsol.github.io/Film_curator",
 	"browserslist": [ ">0.2%", "not dead", "not ie <= 11", "not op_mini all" ]
 }
