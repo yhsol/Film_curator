@@ -58,6 +58,11 @@ const InfoItem = styled.span`opacity: 0.8;`;
 
 const Divider = styled.span`margin: 0px 10px;`;
 
+const InfoVideos = styled.div`
+	margin: 50px 0;
+	line-height: 190%;
+`;
+
 const OverView = styled.p`
 	font-size: 21px;
 	opacity: 0.9;
@@ -115,6 +120,21 @@ const DetailPresenter = ({ result, error, loading }) =>
 											result.genres.length - 1 === index ? genres.name : `${genres.name} / `
 									)}
 							</InfoItem>
+							<InfoVideos>
+								{result.videos ? (
+									result.videos.results.map(
+										(video, index) =>
+											index < 3 ? (
+												<a
+													href={`https://www.youtube.com/watch?v=${video.key}`}
+													target={`_blank`}
+												>
+													<div>{video.name}</div>
+												</a>
+											) : null
+									)
+								) : null}
+							</InfoVideos>
 						</InfoItemContainer>
 						<OverView>{result.overview}</OverView>
 					</Data>
